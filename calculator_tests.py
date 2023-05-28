@@ -6,6 +6,7 @@ day of the week the problem was reported.
 Assumptions:
 1. The current year is not a leap year.
 2. The weekday entered is consistent with the date entered.
+3. The weekday is only entered as an integer.
 """
 
 from calculator import DueDateCalculator
@@ -88,15 +89,10 @@ class DueDateCalculatorTests(unittest.TestCase):
         date_time_issue_resolved = DueDateCalculator.calculate_due_date(self, "05/27/2023", "11:00", 2, 6)
         self.assertEqual(date_time_issue_resolved, "A problem can only be reported during working hours.")
 
-    # This test is for an invalid input type (weekday is in decimal).
-    def test_weekday_in_decimal(self):
-        date_time_issue_resolved = DueDateCalculator.calculate_due_date(self, "05/31/2023", "9:00", 6, 3.2)
-        self.assertEqual(date_time_issue_resolved, "Weekday should be entered as an integer and should be between 1 and 7 inclusive.")
-
     # This test is for an invalid weekday (weekday is out of range).
     def test_weekday_out_of_range(self):
         date_time_issue_resolved = DueDateCalculator.calculate_due_date(self, "06/05/2023", "10:00", 3, 8)
-        self.assertEqual(date_time_issue_resolved, "Weekday should be entered as an integer and should be between 1 and 7 inclusive.")
+        self.assertEqual(date_time_issue_resolved, "Weekday should be between 1 and 7 inclusive.")
 
 if __name__ == '__main__':
     unittest.main()
