@@ -2,7 +2,7 @@
 This file contains the due date calculator implementation.
 """
 
-
+import sys
 # Creates the DueDateCalculator class.
 class DueDateCalculator:
     # Declare constants/variables
@@ -54,7 +54,7 @@ class DueDateCalculator:
 
         # If the weekday input entered is not valid, it returns a message stating the error.
         if not is_weekday_input_valid:
-            return "Weekday should be entered as an integer and should be between 1 and 7 inclusive."
+            return "Weekday should be between 1 and 7 inclusive."
 
         while turnaround_hours > 0:
 
@@ -174,9 +174,20 @@ class DueDateCalculator:
             input_valid = False
         return input_valid
 
-    # This method checks if the weekday is entered as an integer and whether it is within the appropriate range.
+    # This method checks if the weekday entered is within the appropriate range.
     def weekday_validation_check(self, day_of_week):
         weekday_input_valid = True
-        if type(day_of_week) != int or day_of_week < 1 or day_of_week > 7:
+        if day_of_week < 1 or day_of_week > 7:
             weekday_input_valid = False
         return weekday_input_valid
+    
+
+def main():
+    date = sys.argv[1]
+    time = sys.argv[2]
+    turnaround_hours = float(sys.argv[3])
+    weekday = int(sys.argv[4])
+    return DueDateCalculator.calculate_due_date(DueDateCalculator, date, time, turnaround_hours, weekday)
+
+if __name__ == "__main__":
+    print(main())
