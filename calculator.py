@@ -3,8 +3,10 @@ This file contains the due date calculator implementation.
 """
 
 import sys
+
 # Creates the DueDateCalculator class.
 class DueDateCalculator:
+
     # Declare constants/variables
     # The variable "working_days / non_working_days" corresponds to the following: 1 (Monday), 2 (Tuesday),
     # 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday).
@@ -181,7 +183,6 @@ class DueDateCalculator:
             weekday_input_valid = False
         return weekday_input_valid
     
-
 def main():
     date = sys.argv[1]
     time = sys.argv[2]
