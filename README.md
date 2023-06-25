@@ -12,8 +12,7 @@ The calculator.py has the due date calculator implementation. For further testin
 
 The date format should be mm/dd/year, and the time should be in the 24 hour format.
 
-For example, the command can be "python3 calculator.py 05/31/2023 15:00 2 3"
-The output should be 05/31/2023 17:00 Wednesday. 
+For example, the command can be "python3 calculator.py 05/31/2023 15:00 2 3". The output should be 05/31/2023 17:00 Wednesday. 
 
 The code makes the following assumptions:
 1. The current year is not a leap year.
