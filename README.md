@@ -1,8 +1,14 @@
 # DueDateCalculator
 
-This repository contains the code for the due date calculator. The calculator_tests.py consists of all the unit tests written for the due date calculator. The tests can be run by the following command: python3 calculator_tests.py
+This repository contains the code for the implementation of a due date calculator in an issue tracking system (ITS). The due date calculator is provided the inputs (date the problem was reported, time the problem was reported, day the problem was reported and the turnaround time). The calculator outputs the deadline for the problem to be resolved. The code takes into consideration the following rules: 
 
-The calculator.py has the due date calculator implementation. For more testing of the due date calculator, the calculator.py can be run with the following command: python3 calculator.py date time turnaround weekday
+ 1. Working hours are from 9 AM to 5 PM (Monday to Friday)
+ 2. The turnaround time is in working hours.
+ 3. A problem can only be reported during working hours.
+
+The code was written using Test Driven Development (TDD). The calculator_tests.py consists of all the unit tests written for the due date calculator. The tests can be run with the following command: python3 calculator_tests.py
+
+The calculator.py has the due date calculator implementation. For further testing of the due date calculator, the calculator.py file can be ran with the following command: python3 calculator.py date time turnaround weekday
 
 The date format should be mm/dd/year, and the time should be in the 24 hour format.
 
@@ -12,4 +18,6 @@ The code makes the following assumptions:
 1. The current year is not a leap year.
 2. The weekday entered is consistent with the date entered.
 3. The weekday is only entered as an integer.
+
+Lastly, this project was completed without using any external libraries for date and time.
 
